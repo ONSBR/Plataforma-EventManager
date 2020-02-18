@@ -27,10 +27,11 @@ func GetBasicEventRouter() *processor.Processor {
 		return c.Publish("store.executor", c.Event)
 	})
 	p.When("*", func(c *processor.Context) error {
+	    /*
 		if err := actions.SaveSplitState([]*domain.Event{c.Event}); err != nil {
 			log.Error(err)
 			return err
-		}
+		}*/
 		isRecording, err := sdk.IsRecording(c.Event.SystemID)
 		if err != nil {
 			log.Error(err)
