@@ -1,8 +1,6 @@
 package flow
 
 import (
-	"github.com/ONSBR/Plataforma-EventManager/actions"
-	"github.com/ONSBR/Plataforma-EventManager/domain"
 	"github.com/ONSBR/Plataforma-EventManager/handlers"
 	"github.com/ONSBR/Plataforma-EventManager/handlers/middlewares"
 	"github.com/ONSBR/Plataforma-EventManager/infra/factories"
