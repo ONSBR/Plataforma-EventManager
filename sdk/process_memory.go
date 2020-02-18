@@ -16,13 +16,18 @@ func getProcessMemoryUrl() string {
 
 //SaveDocument to process memory
 func SaveDocument(collection string, data interface{}) (err error) {
+    return
+    /*
 	url := fmt.Sprintf("%s%s?app_origin=event_manager", getProcessMemoryUrl(), collection)
 	_, err = http.Post(url, data)
 	return
+	*/
 }
 
 //GetDocument from process memory
 func GetDocument(collection string, query map[string]string) (string, error) {
+    return nil
+    /*
 	queryString := ""
 	for k, v := range query {
 		queryString += fmt.Sprintf("%s=%s&", k, v)
@@ -33,10 +38,13 @@ func GetDocument(collection string, query map[string]string) (string, error) {
 		return "", err
 	}
 	return string(response.Body), nil
+	*/
 }
 
 //ReplaceDocument update full document based on query and collection
 func ReplaceDocument(collection string, query map[string]string, document interface{}) error {
+    return
+    /*
 	queryString := ""
 	for k, v := range query {
 		queryString += fmt.Sprintf("%s=%s&", k, v)
@@ -44,14 +52,18 @@ func ReplaceDocument(collection string, query map[string]string, document interf
 	url := fmt.Sprintf("%s%s?%sapp_origin=event_manager", getProcessMemoryUrl(), collection, queryString)
 	_, err := http.Put(url, document)
 	return err
+	*/
 }
 
 type Memory map[string]interface{}
 
 //GetMemoryHistory returns all commit on process memory by instance
 func GetMemoryHistory(instanceID string) ([]Memory, error) {
+    return nil
+    /*
 	url := fmt.Sprintf("%s%s/history?app_origin=event_manager", getProcessMemoryUrl(), instanceID)
 	result := make([]Memory, 0)
 	err := http.GetJSON(url, &result)
 	return result, err
+	*/
 }
