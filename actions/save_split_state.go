@@ -26,5 +26,5 @@ func SaveSplitState(events []*domain.Event) error {
 		}
 		splitState.AddEventState(state)
 	}
-	return sdk.SaveDocument("splitted_events", splitState)
+	return nil
 }
