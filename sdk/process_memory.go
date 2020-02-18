@@ -40,8 +40,6 @@ func GetDocument(collection string, query map[string]string) (string, error) {
 
 //ReplaceDocument update full document based on query and collection
 func ReplaceDocument(collection string, query map[string]string, document interface{}) error {
-    return
-    /*
 	queryString := ""
 	for k, v := range query {
 		queryString += fmt.Sprintf("%s=%s&", k, v)
@@ -49,7 +47,6 @@ func ReplaceDocument(collection string, query map[string]string, document interf
 	url := fmt.Sprintf("%s%s?%sapp_origin=event_manager", getProcessMemoryUrl(), collection, queryString)
 	_, err := http.Put(url, document)
 	return err
-	*/
 }
 
 type Memory map[string]interface{}
