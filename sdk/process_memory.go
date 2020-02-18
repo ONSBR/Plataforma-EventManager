@@ -53,11 +53,8 @@ type Memory map[string]interface{}
 
 //GetMemoryHistory returns all commit on process memory by instance
 func GetMemoryHistory(instanceID string) ([]Memory, error) {
-    return nil
-    /*
 	url := fmt.Sprintf("%s%s/history?app_origin=event_manager", getProcessMemoryUrl(), instanceID)
 	result := make([]Memory, 0)
 	err := http.GetJSON(url, &result)
 	return result, err
-	*/
 }
