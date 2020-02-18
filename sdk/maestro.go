@@ -42,7 +42,7 @@ func SetReprocessingFailure(event *domain.Event) error {
 	}
 	return nil
 	*/
-	return true
+	return nil
 }
 
 //InitPersistHandler init maestro persist handling for system
