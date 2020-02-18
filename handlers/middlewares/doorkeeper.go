@@ -19,7 +19,7 @@ func Doorkeeper(c *processor.Context) (err error) {
 	}
 	canGo := sdk.EventCanProceed(c.Event)
 	if !canGo {
-		return fmt.Errorf(fmt.Sprintf("plataform is locked to this event %s from system %s", c.Event.Name, c.Event.SystemID))
+		return fmt.Errorf(fmt.Sprintf("plataform is locked (b) to this event %s from system %s", c.Event.Name, c.Event.SystemID))
 	}
 	return
 }
