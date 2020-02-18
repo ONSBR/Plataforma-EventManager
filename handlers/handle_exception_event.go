@@ -3,8 +3,6 @@ package handlers
 import (
 	"fmt"
 
-	"github.com/ONSBR/Plataforma-EventManager/actions"
-	"github.com/ONSBR/Plataforma-EventManager/domain"
 	"github.com/ONSBR/Plataforma-EventManager/processor"
 	"github.com/ONSBR/Plataforma-EventManager/sdk"
 	log "github.com/sirupsen/logrus"
