@@ -26,8 +26,6 @@ func SaveDocument(collection string, data interface{}) (err error) {
 
 //GetDocument from process memory
 func GetDocument(collection string, query map[string]string) (string, error) {
-    return nil
-    /*
 	queryString := ""
 	for k, v := range query {
 		queryString += fmt.Sprintf("%s=%s&", k, v)
@@ -38,7 +36,6 @@ func GetDocument(collection string, query map[string]string) (string, error) {
 		return "", err
 	}
 	return string(response.Body), nil
-	*/
 }
 
 //ReplaceDocument update full document based on query and collection

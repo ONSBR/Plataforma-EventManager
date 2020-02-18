@@ -50,9 +50,9 @@ func GetBasicEventRouter() *processor.Processor {
 func GetEventRouter() *processor.Processor {
 	p := GetDefaultProcessor()
 	p.When("*.persist.request", handlers.HandlePersistenceEvent)
-	p.When("*.exception", handlers.HandleExceptionEvent)
-	p.When("*.error", handlers.HandleExceptionEvent)
-	p.When("*.done", handlers.HandleDoneEvent)
+	//p.When("*.exception", handlers.HandleExceptionEvent)
+	//p.When("*.error", handlers.HandleExceptionEvent)
+	//p.When("*.done", handlers.HandleDoneEvent)
 	p.When("system.*", handlers.HandleSystemEvent)
 	p.When("*", handlers.HandleGeneralEvent)
 	return p

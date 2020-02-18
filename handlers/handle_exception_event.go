@@ -19,6 +19,7 @@ func HandleExceptionEvent(c *processor.Context) error {
 			log.Error(err)
 		}
 	}
+	/*
 	splitState, err := actions.GetSplitState(c.Event)
 	if err != nil {
 		c.Publish("store.executor.exception", c.Event)
@@ -28,5 +29,6 @@ func HandleExceptionEvent(c *processor.Context) error {
 		c.Publish("store.executor.exception", c.Event)
 		return err
 	}
+	*/
 	return c.Publish("store.executor.exception", c.Event)
 }
