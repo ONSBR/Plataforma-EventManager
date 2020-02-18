@@ -1,12 +1,7 @@
 package sdk
 
 import (
-	"fmt"
-
-	"github.com/ONSBR/Plataforma-Deployer/env"
-	"github.com/ONSBR/Plataforma-EventManager/domain"
-	"github.com/PMoneda/http"
-	log "github.com/sirupsen/logrus"
+    "github.com/ONSBR/Plataforma-EventManager/domain"
 )
 
 //EventCanProceed to be processed by plataform
