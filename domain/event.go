@@ -60,7 +60,7 @@ type Event struct {
 	Scope          string                 `json:"scope,omitempty"`
 	Payload        map[string]interface{} `json:"payload,omitempty"`
 	Reproduction   map[string]interface{} `json:"reproduction,omitempty"`
-	Reprocessing   *ReprocessingInfo      `json:"reprocessing,omitempty"`
+	Reprocessing   map[string]interface{} `json:"reprocessing,omitempty"`
 	Bindings       []*Operation           `json:"-"`
 }
 
