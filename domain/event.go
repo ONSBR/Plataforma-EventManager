@@ -109,9 +109,6 @@ func (e *Event) ApplyDefaultFields() {
 		e.Tag = u.String()
 		log.Info("setting new tag to event ", e.Name, " on scope ", e.Scope, " on branch ", e.Branch, " tag ", e.Tag)
 	}
-	if e.Scope == "execution" {
-		e.ReferenceDate = time.Now().Format(time.RFC3339)
-	}
 }
 
 //IsSystemEvent returns true if this event is a internal platform event
