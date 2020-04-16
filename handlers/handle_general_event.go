@@ -43,15 +43,36 @@ func handleExecutionGeneralEvent(c *processor.Context) error {
 					return err
 				}
 			} else {
-				if err := c.Publish("store.executor", event); err != nil {
-					log.Error(err)
-					return err
+				var processIds []string
+				for _, operation := range c.Event.Bindings {
+					log.Info(fmt.Sprintf("Pushing %s", operation.ProcessID))
+					if contains(processIds, operation.ProcessID) {
+						log.Info(fmt.Sprintf("Already pushed %s", operation.ProcessID))
+						continue
+					}
+					processIds = append(processIds, operation.ProcessID)
+					event.Version = operation.Version
+					event.ProcessID = operation.ProcessID
+					event.OperationID = operation.ID
+					if err := c.Publish("store.executor", event); err != nil {
+						log.Error(err)
+						return err
+					}
 				}
 			}
 
 		}
 	}
 	return nil
+}
+
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }
 
 func handleReprocessingGeneralEvent(c *processor.Context) error {

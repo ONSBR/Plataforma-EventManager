@@ -49,6 +49,8 @@ type Event struct {
 	ReferenceDate  string                 `json:"referenceDate"`
 	Branch         string                 `json:"branch"`
 	SystemID       string                 `json:"systemId,omitempty"`
+	ProcessID      string                 `json:"processId"`
+	OperationID    string                 `json:"operationId"`
 	Name           string                 `json:"name,omitempty"`
 	Version        string                 `json:"version,omitempty"`
 	Image          string                 `json:"image,omitempty"`
