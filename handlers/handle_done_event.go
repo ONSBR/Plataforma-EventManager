@@ -13,7 +13,7 @@ import (
 func HandleDoneEvent(c *processor.Context) error {
 	log.Debug(fmt.Sprintf("HandleDoneEvent %s on branch %s", c.Event.Name, c.Event.Branch))
 	if c.Event.IsExecution() {
-		return handleExecutionDone(c)
+		//return handleExecutionDone(c)
 	}
 	return c.Publish("store.executor.finished", c.Event)
 }

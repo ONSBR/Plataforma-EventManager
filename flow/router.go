@@ -25,11 +25,11 @@ func GetBasicEventRouter() *processor.Processor {
 		return c.Publish("store.executor", c.Event)
 	})
 	p.When("*", func(c *processor.Context) error {
-	    /*
-		if err := actions.SaveSplitState([]*domain.Event{c.Event}); err != nil {
-			log.Error(err)
-			return err
-		}*/
+		/*
+			if err := actions.SaveSplitState([]*domain.Event{c.Event}); err != nil {
+				log.Error(err)
+				return err
+			}*/
 		isRecording, err := sdk.IsRecording(c.Event.SystemID)
 		if err != nil {
 			log.Error(err)
@@ -49,9 +49,9 @@ func GetBasicEventRouter() *processor.Processor {
 func GetEventRouter() *processor.Processor {
 	p := GetDefaultProcessor()
 	p.When("*.persist.request", handlers.HandlePersistenceEvent)
-	//p.When("*.exception", handlers.HandleExceptionEvent)
-	//p.When("*.error", handlers.HandleExceptionEvent)
-	//p.When("*.done", handlers.HandleDoneEvent)
+	p.When("*.exception", handlers.HandleExceptionEvent)
+	p.When("*.error", handlers.HandleExceptionEvent)
+	p.When("*.done", handlers.HandleDoneEvent)
 	p.When("system.*", handlers.HandleSystemEvent)
 	p.When("*", handlers.HandleGeneralEvent)
 	return p

@@ -2,6 +2,7 @@ package domain
 
 //Operation is a event binding config
 type Operation struct {
+	ID            string `json:"id"`
 	Event         string `json:"event_in"`
 	EventOut      string `json:"event_out"`
 	Version       string `json:"version"`
