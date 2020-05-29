@@ -9,6 +9,7 @@ type Operation struct {
 	SystemID      string `json:"systemId"`
 	ProcessID     string `json:"processId"`
 	Reprocessable bool   `json:"reprocessable"`
+	Image         string `json:"image"`
 }
 
 //OperationInstance hanlde each instance of an operation executed on platform
