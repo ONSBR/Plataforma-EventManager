@@ -13,7 +13,7 @@ import (
 func EnrichEvent(c *processor.Context) (err error) {
 	c.Event.ApplyDefaultFields()
 	if c.Event.Version == "" {
-		c.Event.Bindings, err = sdk.EventBindings(c.Event.Name)
+		c.Event.Bindings, err = sdk.EventBindingsList(c.Event.Name)
 		if err == nil && len(c.Event.Bindings) > 0 {
 			c.Event.SystemID = c.Event.Bindings[0].SystemID
 			c.Event.Version = c.Event.Bindings[0].Version
@@ -28,8 +28,8 @@ func EnrichEvent(c *processor.Context) (err error) {
 		} else {
 			log.Error(fmt.Sprintf("no binding found for event %s with version %s", c.Event.Name, c.Event.Version))
 		}
-
 	}
+	log.Info(fmt.Sprintf("Count %d binding for event %s with version %s", len(c.Event.Bindings), c.Event.Name, c.Event.Version))
 	if c.Event.IdempotencyKey != "" {
 		return
 	}

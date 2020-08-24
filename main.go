@@ -41,7 +41,7 @@ func main() {
 		os.Setenv("RABBITMQ_HOST", "localhost")
 		os.Setenv("RABBITMQ_USERNAME", "guest")
 		os.Setenv("RABBITMQ_PASSWORD", "guest")
-		os.Setenv("PORT", "8089")
+		os.Setenv("PORT", "5671")
 	}
 	bus.Init()
 	fmt.Println(logo())
@@ -56,7 +56,7 @@ func main() {
 
 func logo() (logo string) {
 	logo = `
- 	 ______               _     __  __
+ 	 ______               _     __  __ b
 	|  ____|             | |   |  \/  |
 	| |____   _____ _ __ | |_  | \  / | __ _ _ __   __ _  __ _  ___ _ __
 	|  __\ \ / / _ \ '_ \| __| | |\/| |/ _' | '_ \ / _' |/ _' |/ _ \ '__|

@@ -16,9 +16,12 @@ func getProcessMemoryUrl() string {
 
 //SaveDocument to process memory
 func SaveDocument(collection string, data interface{}) (err error) {
+    return
+    /*
 	url := fmt.Sprintf("%s%s?app_origin=event_manager", getProcessMemoryUrl(), collection)
 	_, err = http.Post(url, data)
 	return
+	*/
 }
 
 //GetDocument from process memory

@@ -49,6 +49,8 @@ type Event struct {
 	ReferenceDate  string                 `json:"referenceDate"`
 	Branch         string                 `json:"branch"`
 	SystemID       string                 `json:"systemId,omitempty"`
+	ProcessID      string                 `json:"processId"`
+	OperationID    string                 `json:"operationId"`
 	Name           string                 `json:"name,omitempty"`
 	Version        string                 `json:"version,omitempty"`
 	Image          string                 `json:"image,omitempty"`
@@ -60,7 +62,7 @@ type Event struct {
 	Scope          string                 `json:"scope,omitempty"`
 	Payload        map[string]interface{} `json:"payload,omitempty"`
 	Reproduction   map[string]interface{} `json:"reproduction,omitempty"`
-	Reprocessing   *ReprocessingInfo      `json:"reprocessing,omitempty"`
+	Reprocessing   map[string]interface{} `json:"reprocessing,omitempty"`
 	Bindings       []*Operation           `json:"-"`
 }
 
@@ -108,9 +110,6 @@ func (e *Event) ApplyDefaultFields() {
 		u, _ := uuid.NewUUID()
 		e.Tag = u.String()
 		log.Info("setting new tag to event ", e.Name, " on scope ", e.Scope, " on branch ", e.Branch, " tag ", e.Tag)
-	}
-	if e.Scope == "execution" {
-		e.ReferenceDate = time.Now().Format(time.RFC3339)
 	}
 }
 

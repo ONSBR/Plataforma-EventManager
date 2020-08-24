@@ -1,16 +1,12 @@
 package sdk
 
 import (
-	"fmt"
-
-	"github.com/ONSBR/Plataforma-Deployer/env"
-	"github.com/ONSBR/Plataforma-EventManager/domain"
-	"github.com/PMoneda/http"
-	log "github.com/sirupsen/logrus"
+    "github.com/ONSBR/Plataforma-EventManager/domain"
 )
 
 //EventCanProceed to be processed by plataform
 func EventCanProceed(event *domain.Event) bool {
+    /*
 	scheme := env.Get("MAESTRO_SCHEME", "http")
 	host := env.Get("MAESTRO_HOST", "localhost")
 	port := env.Get("MAESTRO_PORT", "6971")
@@ -21,9 +17,12 @@ func EventCanProceed(event *domain.Event) bool {
 		return false
 	}
 	return resp.Status == 200
+	*/
+	return true
 }
 
 func SetReprocessingFailure(event *domain.Event) error {
+    /*
 	scheme := env.Get("MAESTRO_SCHEME", "http")
 	host := env.Get("MAESTRO_HOST", "localhost")
 	port := env.Get("MAESTRO_PORT", "6971")
@@ -37,10 +36,13 @@ func SetReprocessingFailure(event *domain.Event) error {
 		return fmt.Errorf(string(resp.Body))
 	}
 	return nil
+	*/
+	return nil
 }
 
 //InitPersistHandler init maestro persist handling for system
 func InitPersistHandler(event *domain.Event) bool {
+    /*
 	scheme := env.Get("MAESTRO_SCHEME", "http")
 	host := env.Get("MAESTRO_HOST", "localhost")
 	port := env.Get("MAESTRO_PORT", "6971")
@@ -51,4 +53,6 @@ func InitPersistHandler(event *domain.Event) bool {
 		return false
 	}
 	return resp.Status == 200
+	*/
+	return true
 }

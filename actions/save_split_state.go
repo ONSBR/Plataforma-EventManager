@@ -5,7 +5,6 @@ import (
 
 	"github.com/ONSBR/Plataforma-EventManager/domain"
 	"github.com/ONSBR/Plataforma-EventManager/infra"
-	"github.com/ONSBR/Plataforma-EventManager/sdk"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -27,5 +26,5 @@ func SaveSplitState(events []*domain.Event) error {
 		}
 		splitState.AddEventState(state)
 	}
-	return sdk.SaveDocument("splitted_events", splitState)
+	return nil
 }

@@ -34,7 +34,7 @@ func registerCommandsAPI(r *gin.Engine) {
 			if err != nil {
 				log.Error(err)
 			}
-			log.Info("Tempo total de processamento do evento:", time.Now().Sub(begin))
+			log.Info("Tempo total de processamento do evento (b):", time.Now().Sub(begin))
 			if err == nil {
 				c.JSON(200, gin.H{
 					"message": "OK",
