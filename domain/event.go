@@ -63,6 +63,8 @@ type Event struct {
 	Payload        map[string]interface{} `json:"payload,omitempty"`
 	Reproduction   map[string]interface{} `json:"reproduction,omitempty"`
 	Reprocessing   map[string]interface{} `json:"reprocessing,omitempty"`
+	Interruption   map[string]interface{} `json:"interruption,omitempty"`
+	ProcessChainId string                 `json:"processChainId,omitempty"`
 	Bindings       []*Operation           `json:"-"`
 }
 
