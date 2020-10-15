@@ -58,6 +58,7 @@ type Event struct {
 	Tag            string                 `json:"tag"`
 	AppOrigin      string                 `json:"appOrigin,omitempty"`
 	Owner          string                 `json:"owner,omitempty"`
+	Credential     map[string]interface{} `json:"credential,omitempty"`
 	InstanceID     string                 `json:"instanceId,omitempty"`
 	Scope          string                 `json:"scope,omitempty"`
 	Payload        map[string]interface{} `json:"payload,omitempty"`
